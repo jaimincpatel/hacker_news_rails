@@ -1,0 +1,20 @@
+Post Title: <%=@post.title%><br>
+Post URL: <a href='<%=@post.url%>'>CLICK ME</a><br>
+
+<%= form_for([@post, @post.comments.build]) do |f| %>
+  <p>
+    <%= f.label :comment_text %><br>
+    <%= f.text_area :comment_text %>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
+
+Here are your comments:
+<ol>
+<% @comments.each do |comment| %>
+  <li><%=comment.comment_text%></a></li>
+<% end %>
+</ol>

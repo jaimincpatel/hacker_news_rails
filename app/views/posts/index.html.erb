@@ -1,0 +1,10 @@
+Here are all the posts:
+
+<ol>
+<% @posts.each do |post| %>
+  <li><a href ='<%=post.url%>'><%=post.title%></a><br>
+    <%= link_to "#{post.comments.count} Comments", post_path(post)%></a></li>
+<% end %>
+</ol>
+
+<%= link_to "New Post", new_post_path %>
